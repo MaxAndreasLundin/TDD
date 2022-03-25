@@ -1,24 +1,22 @@
 package max.com;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-public class ShoppingCartTest {
+class ShoppingCartTest {
     ShoppingCart shoppingCart;
 
-    @Before
-   public void setUp() {
+    @BeforeEach
+    void setUp() {
         shoppingCart = new ShoppingCart();
-        shoppingCart.addItem("Cucumber", 5);
     }
 
     @Test
-    @DisplayName("Adding items in shopping cart")
-    public void checkIfItemsAreAdded() {
-        int expected = 2;
+    @DisplayName("Test")
+    void shouldAddItem() {
+        int expected = 1;
         shoppingCart.addItem("Tomato", 10);
         int actual = shoppingCart.list.size();
 

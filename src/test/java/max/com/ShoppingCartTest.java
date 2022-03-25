@@ -18,7 +18,7 @@ public class ShoppingCartTest {
     void checkIfItemsAreAdded() {
         int expected = 1;
         shoppingCart.list.addItem("Tomat", 10);
-        int actual = shoppingCart.list.size;
+        int actual = shoppingCart.list.size();
 
         Assertions.assertEquals(expected, actual);
     }

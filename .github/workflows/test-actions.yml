@@ -1,1 +1,9 @@
+name: tests
+on: push
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests with Maven
+        run: mvn -B test --file pom.xml
 

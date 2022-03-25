@@ -16,13 +16,20 @@ class ShoppingCartTest {
     }
 
     @Test
-    @DisplayName("Add one item to cart")
+    @DisplayName("Add one item to the cart")
     void shouldAddOneItem() {
         int expected = shoppingCart.list.size() + 1;
         shoppingCart.addItem("Tomato", 10);
         int actual = shoppingCart.list.size();
 
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Remove lemon from the cart")
+    void shouldRemoveLemon() {
+        shoppingCart.list.remove("Lemon");
+        Assertions.assertFalse(shoppingCart.list.containsKey("Lemon"));
     }
 
     @Test

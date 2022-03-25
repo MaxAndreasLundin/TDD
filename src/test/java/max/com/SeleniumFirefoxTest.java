@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import static org.junit.Assert.fail;
 
@@ -18,15 +18,15 @@ public class SeleniumFirefoxTest {
     private final StringBuffer verificationErrors = new StringBuffer();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         baseUrl = "https://www.google.com/";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @Test
-    public void testUntitledTestCase() throws Exception {
+    public void testUntitledTestCase() {
         driver.get("https://www.sweclockers.com/");
         driver.findElement(By.xpath("//input[@type='text']")).click();
         driver.findElement(By.xpath("//input[@type='text']")).clear();
@@ -36,7 +36,7 @@ public class SeleniumFirefoxTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {

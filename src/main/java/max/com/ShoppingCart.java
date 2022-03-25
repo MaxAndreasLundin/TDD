@@ -10,6 +10,9 @@ public class ShoppingCart {
     }
 
     public void addItem(String product, Integer value) {
+        if (value <= 0) {
+            throw new IllegalArgumentException();
+        }
         list.put(product, value);
     }
 

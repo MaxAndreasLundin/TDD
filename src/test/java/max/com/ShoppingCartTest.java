@@ -16,7 +16,6 @@ class ShoppingCartTest {
     }
 
     @Test
-    @DisplayName("Add one item to the cart")
     void shouldAddOneItem() {
         int expected = shoppingCart.list.size() + 1;
         shoppingCart.addItem("Tomato", 10);
@@ -34,20 +33,17 @@ class ShoppingCartTest {
     }
 
     @Test
-    @DisplayName("Remove lemon from the cart")
     void shouldRemoveLemon() {
         shoppingCart.list.remove("Lemon");
         Assertions.assertFalse(shoppingCart.list.containsKey("Lemon"));
     }
 
     @Test
-    @DisplayName("Check if cart contains Apple")
     void shouldContainApple() {
         Assertions.assertTrue(shoppingCart.list.containsKey("Apple"));
     }
 
     @Test
-    @DisplayName("Total value of cart")
     void shouldReturnTotalValueOfCart() {
         int expected = 38;
         int actual = shoppingCart.totalValueOfCart();
@@ -55,9 +51,16 @@ class ShoppingCartTest {
     }
 
     @Test
-    @DisplayName("Checking for exceptions")
-    void noExceptionShouldBeThrownWhenAddingProduct() {
-        shoppingCart.addItem("Banana", 3);
-        Assertions.assertTrue(true);
+    void shouldThrowExceptionIfNegativeValue() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            shoppingCart.addItem("Kiwi", -3);
+        });
+    }
+
+    @Test
+    void shouldThrowExceptionIfValueIsZero() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            shoppingCart.addItem("Kiwi", 0);
+        });
     }
 }

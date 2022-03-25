@@ -12,4 +12,12 @@ public class ShoppingCart {
     public void addItem(String product, Integer value) {
         list.put(product, value);
     }
+
+    public int totalValueOfCart(){
+        int total = 0;
+        for (Integer i : list.values()) {
+            total += i;
+        }
+        return total;
+    }
 }

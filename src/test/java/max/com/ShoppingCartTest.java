@@ -18,7 +18,7 @@ class ShoppingCartTest {
     @Test
     @DisplayName("Add one item to cart")
     void shouldAddOneItem() {
-        int expected = 3;
+        int expected = shoppingCart.list.size() + 1;
         shoppingCart.addItem("Tomato", 10);
         int actual = shoppingCart.list.size();
 
@@ -31,5 +31,12 @@ class ShoppingCartTest {
         int actual = shoppingCart.totalValueOfCart();
 
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Checking for exceptions")
+    void noExceptionShouldBeThrownWhenAddingProduct() {
+        shoppingCart.addItem("Banana", 3);
+        Assertions.assertTrue(true);
     }
 }

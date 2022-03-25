@@ -15,9 +15,9 @@ public class ShoppingCartTest {
 
     @Test
     @DisplayName("Bajs")
-    void checkIfItemsAreAdded() {
+    public void checkIfItemsAreAdded() {
         int expected = 1;
-        shoppingCart.list.addItem("Tomat", 10);
+        shoppingCart.addItem("Tomat", 10);
         int actual = shoppingCart.list.size();
 
         Assertions.assertEquals(expected, actual);

@@ -8,4 +8,8 @@ public class ShoppingCart {
     public ShoppingCart() {
         list = new HashMap<>();
     }
+
+    public void addItem(String product, Integer value) {
+        list.put(product, value);
+    }
 }

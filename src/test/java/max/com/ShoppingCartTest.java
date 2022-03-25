@@ -21,8 +21,16 @@ class ShoppingCartTest {
         int expected = shoppingCart.list.size() + 1;
         shoppingCart.addItem("Tomato", 10);
         int actual = shoppingCart.list.size();
-
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Size of list should not be the same after adding item")
+    void sizeOfListShouldNotBeSameAfterAddingItem() {
+        int expected = shoppingCart.list.size();
+        shoppingCart.addItem("Tomato", 10);
+        int actual = shoppingCart.list.size();
+        Assertions.assertNotEquals(expected, actual);
     }
 
     @Test
@@ -40,10 +48,9 @@ class ShoppingCartTest {
 
     @Test
     @DisplayName("Total value of cart")
-    void checkTotalValueOfCart() {
+    void shouldReturnTotalValueOfCart() {
         int expected = 38;
         int actual = shoppingCart.totalValueOfCart();
-
         Assertions.assertEquals(expected, actual);
     }
 

@@ -10,16 +10,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class SeleniumTest
-{
-    @Test
+ public class SeleniumTest {
+
     public void googleSearch() throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
 
         WebDriver driver;
         driver = new FirefoxDriver();
 
-        driver.get("https://google.com/");
+        driver.get("https://sweclockers.com");
 
         System.out.println(driver.getTitle()); // => "Google"
         System.out.println(driver.getCurrentUrl()); // => "Google"

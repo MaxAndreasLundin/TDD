@@ -33,6 +33,13 @@ class ShoppingCartTest {
     }
 
     @Test
+    @DisplayName("Check if cart contains Apple")
+    void shouldContainApple() {
+        Assertions.assertTrue(shoppingCart.list.containsKey("Apple"));
+    }
+
+    @Test
+    @DisplayName("Total value of cart")
     void checkTotalValueOfCart() {
         int expected = 38;
         int actual = shoppingCart.totalValueOfCart();

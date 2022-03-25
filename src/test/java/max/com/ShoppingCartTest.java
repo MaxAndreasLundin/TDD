@@ -52,15 +52,11 @@ class ShoppingCartTest {
 
     @Test
     void shouldThrowExceptionIfNegativeValue() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            shoppingCart.addItem("Kiwi", -3);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> shoppingCart.addItem("Kiwi", -3));
     }
 
     @Test
     void shouldThrowExceptionIfValueIsZero() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            shoppingCart.addItem("Kiwi", 0);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> shoppingCart.addItem("Kiwi", 0));
     }
 }

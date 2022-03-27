@@ -1,4 +1,4 @@
-# TDD Kravställning från Julio.
+# TDD with CI/CD workflow.
 
 Varukorg
 1. Lägga till produkter i varukorgen.

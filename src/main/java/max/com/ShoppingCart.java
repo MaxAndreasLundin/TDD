@@ -23,6 +23,4 @@ public class ShoppingCart {
         }
         return total;
     }
-
-    //Testing
 }

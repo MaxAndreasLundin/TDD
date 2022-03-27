@@ -42,4 +42,5 @@ public class SeleniumFirefoxTest {
             fail(verificationErrorString);
         }
     }
+    // Test
 }

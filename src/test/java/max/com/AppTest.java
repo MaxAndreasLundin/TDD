@@ -1,12 +1,12 @@
 package max.com;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+class AppTest {
 
-public class AppTest {
     @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
+    void simpleTest() {
+        Assertions.assertTrue(true);
     }
 }

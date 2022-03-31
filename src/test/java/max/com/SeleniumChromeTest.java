@@ -7,20 +7,20 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
 import static org.junit.Assert.fail;
 
-public class SeleniumFirefoxTest {
+public class SeleniumChromeTest {
     private WebDriver driver;
     private final StringBuffer verificationErrors = new StringBuffer();
 
     @Before
     public void setUp() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 

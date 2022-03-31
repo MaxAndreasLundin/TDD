@@ -23,7 +23,7 @@ public class SeleniumFirefoxTest {
     }
 
     @Test
-    public void testUntitledTestCase() {
+    public void webPageTest() {
         driver.get("https://www.sweclockers.com/");
         driver.findElement(By.xpath("//input[@type='text']")).click();
         driver.findElement(By.xpath("//input[@type='text']")).clear();

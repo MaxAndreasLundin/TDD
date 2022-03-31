@@ -15,7 +15,7 @@ import static org.junit.Assert.fail;
 
 public class SeleniumChromeTest {
     private WebDriver driver;
-    private final StringBuffer verificationErrors = new StringBuffer();
+    private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
     public void setUp() {

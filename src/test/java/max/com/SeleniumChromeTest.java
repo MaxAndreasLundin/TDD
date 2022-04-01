@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -32,6 +33,10 @@ public class SeleniumChromeTest {
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("rtx 3090");
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys(Keys.ENTER);
         driver.findElement(By.linkText("Apple M1 Ultra utpresterar inte Nvidia Geforce RTX 3090")).click();
+        String expected = "Apple M1 Ultra utpresterar inte Nvidia Geforce RTX 3090";
+        String actual = driver.getTitle();
+        System.out.println("Page title is: " + driver.getTitle());
+        Assertions.assertEquals(expected, actual);
     }
 
     @After

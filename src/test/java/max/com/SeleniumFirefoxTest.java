@@ -4,7 +4,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -30,6 +32,7 @@ public class SeleniumFirefoxTest {
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("rtx 3090");
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys(Keys.ENTER);
         driver.findElement(By.linkText("Apple M1 Ultra utpresterar inte Nvidia Geforce RTX 3090")).click();
+        System.out.println("Page title is: " + driver.getTitle());
     }
 
     @After
